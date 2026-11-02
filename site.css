@@ -1,26 +1,61 @@
 header {
-  display: flex;
-  align-items: center;
-  gap: 1em;
+    background-color: #688cdb;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 10px;
 }
 
 nav ul {
-  display: flex;
-  gap: 2em;
-  list-style: none;
+    padding: 20px;
+    display: flex;
+    gap: 2em;
+    list-style: none;
+}
+
+nav a:link {
+    color: #2e23d0
+}
+
+nav a:visited {
+    color: #455e94
+}
+
+nav a:hover {
+    color: #A52A2A
 }
 
 .sidebar {
-  display: grid;
-  grid-template-columns: 200px 1fr; /* sidebar + content */
-  gap: 1rem;
+    float: left;
+    display: grid;
+    gap: 2em;
 }
 
+.featured-reviews {
+    font-weight: bold;
+}
+
+.featured-grid {
+    background-color: #7893ce;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.slogan {
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+body {
+    background-color: #c6d2ee;
+}
 .logo {
     max-width: 10%;
     height: auto;
 }
 
 footer {
-  text-align: center;
+    background-color: #e2e3f3;
+    text-align: center;
 }
