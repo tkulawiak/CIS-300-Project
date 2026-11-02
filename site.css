@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+nav ul {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+}
+
+.sidebar {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* sidebar + content */
+  gap: 1rem;
+}
+
+.logo {
+    max-width: 10%;
+    height: auto;
+}
+
+footer {
+  text-align: center;
+}
