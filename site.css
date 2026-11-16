@@ -1,45 +1,240 @@
-header {
-    background-color: #688cdb;
+:root {
+    --blue-950: #17235f;
+    --blue-800: #2236AC;
+    --blue-700: #3c55d9;
+    --blue-500: #8298f4;
+    --blue-200: #d7dfff;
+    --blue-100: #edf0ff;
+    --blue-50: #f8f9ff;
+    --accent: #ffd166;
+    --snes-red: #c93645;
+    --snes-yellow: #806200;
+    --snes-green: #298653;
+    --snes-blue: #315fbd;
+}
+
+body {
     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--blue-50);
+    color: var(--blue-950);
+}
+
+header {
+    background-color: var(--blue-800);
+    color: white;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1em;
     padding: 10px;
+    border-bottom: 4px solid var(--accent);
+    text-align: center;
+}
+
+.header-text h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-text h1,
+.header-text .slogan {
+    margin: 0;
+}
+
+.header-text .slogan {
+    margin-top: 0.25em;
 }
 
 nav ul {
-    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 2em;
+    background-color: var(--blue-800);
     list-style: none;
 }
 
+nav li {
+    flex: 1;
+}
+
+nav a {
+    display: block;
+    padding: 12px 4px;
+    font-size: 1.1em;
+    text-align: center;
+    text-decoration: none;
+}
+
 nav a:link {
-    color: #2e23d0
+    color: white;
 }
 
 nav a:visited {
-    color: #455e94
+    color: white;
 }
 
 nav a:hover {
-    color: #A52A2A
+    background-color: var(--accent);
+    color: var(--blue-950);
 }
 
 .sidebar {
-    float: left;
+    flex: 0 0 180px;
+    padding: 1em;
+    border-radius: 6px;
+    background-color: var(--blue-100);
+}
+
+.sidebar h3 {
+    margin: 0 0 0.5em;
+    color: var(--blue-950);
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.sidebar ul {
     display: grid;
+    gap: 0.5em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar a {
+    display: block;
+    padding: 0.65em 0.8em;
+    border: 1px solid var(--blue-700);
+    border-radius: 4px;
+    background-color: var(--blue-800);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sidebar li:nth-child(1) a {
+    border-color: var(--snes-red);
+    background-color: var(--snes-red);
+}
+
+.sidebar li:nth-child(2) a {
+    border-color: var(--snes-yellow);
+    background-color: var(--snes-yellow);
+}
+
+.sidebar li:nth-child(3) a {
+    border-color: var(--snes-green);
+    background-color: var(--snes-green);
+}
+
+.sidebar li:nth-child(4) a {
+    border-color: var(--snes-blue);
+    background-color: var(--snes-blue);
+}
+
+.sidebar a:hover {
+    border-color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.sidebar a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.content-layout {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
     gap: 2em;
+    box-sizing: border-box;
+    padding-right: 2em;
+}
+
+.featured-content {
+    flex: 1;
+    min-width: 0;
 }
 
 .featured-reviews {
     font-weight: bold;
+    font-size: 1.25em;
 }
 
 .featured-grid {
-    background-color: #7893ce;
+    gap: 1em;
     padding: 40px;
+    border-radius: 8px;
+    background-color: var(--blue-200);
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-element {
+    padding: 1em;
+    border-radius: 6px;
+    background-color: white;
+    border: 1px solid var(--blue-500);
+}
+
+.grid-element h2 {
+    margin: 0 0 0.75em;
+    font-size: 1.1em;
+}
+
+.image-placeholder {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+    background-color: var(--blue-950);
+    color: white;
+}
+
+.grid-element img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.grid-element p {
+    margin: 0.75em 0 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+    .content-layout {
+        flex-direction: column;
+        padding-right: 0;
+    }
+
+    .sidebar {
+        flex: initial;
+    }
+
+    .featured-content {
+        box-sizing: border-box;
+        padding: 0 1em;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+        padding: 1.25em;
+    }
 }
 
 .slogan {
@@ -47,15 +242,19 @@ nav a:hover {
     font-family: Georgia, 'Times New Roman', serif;
 }
 
-body {
-    background-color: #c6d2ee;
-}
 .logo {
-    max-width: 10%;
+    width: 120px;
+    max-width: 30vw;
     height: auto;
 }
 
 footer {
-    background-color: #e2e3f3;
+    padding: 1em;
+    background-color: var(--blue-800);
+    color: white;
     text-align: center;
+}
+
+footer a {
+    color: var(--blue-100);
 }
