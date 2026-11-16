@@ -8,7 +8,7 @@
     --blue-50: #f8f9ff;
     --accent: #ffd166;
     --snes-red: #c93645;
-    --snes-yellow: #806200;
+    --snes-yellow: #8f7000;
     --snes-green: #298653;
     --snes-blue: #315fbd;
 }
@@ -187,6 +187,19 @@ nav a:hover {
     font-size: 1.1em;
 }
 
+.grid-element h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.grid-element h2 a:hover {
+    text-decoration: underline;
+}
+
+.review-image-link {
+    display: block;
+}
+
 .image-placeholder {
     display: grid;
     place-items: center;
@@ -210,6 +223,51 @@ nav a:hover {
     line-height: 1.4;
 }
 
+.review-title {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.racing-review article,
+.fortress-review article {
+    padding-top: 1em;
+}
+
+.review-subtitle {
+    margin: 0.4em 0 1em;
+}
+
+.review-image {
+    display: block;
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.review-image-copy-width,
+.review-copy {
+    width: 80ch;
+    max-width: 100%;
+}
+
+.review-meta {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.review-meta p {
+    margin: 0;
+}
+
+.review-copy {
+    line-height: 1.6;
+}
+
 @media (max-width: 700px) {
     .content-layout {
         flex-direction: column;
@@ -227,6 +285,18 @@ nav a:hover {
 
     .featured-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .review-image {
+        width: 100%;
+    }
+
+    .review-meta {
+        width: 100%;
+    }
+
+    .review-title {
+        font-size: 2rem;
     }
 }
 
